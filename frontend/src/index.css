@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+
+/* ============================================
+   BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+a { text-decoration: none; }
+
+/* ============================================
+   REUSABLE BUTTONS
+   ============================================ */
+.btn-premium {
+  background: linear-gradient(135deg, #0d9488, #059669);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px -2px rgba(13, 148, 136, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-premium:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px -4px rgba(13, 148, 136, 0.3);
+  color: white;
+}
+
+.btn-ghost {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background: rgba(13, 148, 136, 0.07);
+  border-color: rgba(13, 148, 136, 0.15);
+  color: #0d9488;
+  transform: translateY(-1px);
+}
+
+.btn-danger-glow {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px -2px rgba(244, 63, 94, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-danger-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px -4px rgba(244, 63, 94, 0.4);
+  color: white;
+}
+
+.btn-success-glow {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-success-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px -4px rgba(16, 185, 129, 0.4);
+  color: white;
+}
+
+.btn-warning-glow {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px -2px rgba(245, 158, 11, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-warning-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px -4px rgba(245, 158, 11, 0.4);
+}
+
+.btn-outline-glass {
+  background: rgba(255, 255, 255, 0.72);
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px 16px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-outline-glass:hover {
+  background: rgba(13, 148, 136, 0.07);
+  color: #0d9488;
+  border-color: rgba(13, 148, 136, 0.15);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.animate-in { animation: fadeInUp 0.6s cubic-bezier(0, 0, 0.2, 1) both; }
+.animate-in-delay-1 { animation-delay: 0.08s; }
+.animate-in-delay-2 { animation-delay: 0.16s; }
+.animate-in-delay-3 { animation-delay: 0.24s; }
+
+/* ============================================
+   SKELETON LOADER
+   ============================================ */
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+  border-radius: 10px;
+}
+
+/* ============================================
+   TOAST NOTIFICATION
+   ============================================ */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 14px 20px;
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: 500;
+  font-size: 0.95rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: #f8fffe; }
+::-webkit-scrollbar-thumb { background: #99f6e4; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #5eead4; }

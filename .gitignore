@@ -1,0 +1,12 @@
+node_modules/
+vendor/
+.DS_Store
+Thumbs.db
+backend/storage/
+backend/public/storage/
+frontend/dist/
+frontend/build/
+.vscode/
+.idea/
+*.log
+.env
